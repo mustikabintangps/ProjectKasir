@@ -27,7 +27,7 @@ DefaultTableModel model;
     
     public dataMember() {
         initComponents();
-        String[] judul = {"Nama","Alamat", "No HP", "Jenis Kelamin"};
+        String[] judul = {"ID","Nama","Alamat", "No HP", "Jenis Kelamin"};
         model = new DefaultTableModel(judul, 0);
         this.tabelDataMember.setModel(model);
         tampilkan();
@@ -42,7 +42,7 @@ DefaultTableModel model;
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/posdb", "root", "");
             ResultSet rs =cn.createStatement().executeQuery("SELECT * FROM datamember");
             while(rs.next()){
-                String data [] = {rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)};
+                String data [] = {rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)};
                 model.addRow(data);
             }
         } catch (SQLException ex){
