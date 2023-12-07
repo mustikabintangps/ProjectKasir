@@ -142,6 +142,11 @@ public class menuPilihan extends javax.swing.JFrame {
         tblKeluar.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
         tblKeluar.setForeground(new java.awt.Color(255, 255, 255));
         tblKeluar.setText("KELUAR");
+        tblKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblKeluarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelBackgroundLayout = new javax.swing.GroupLayout(panelBackground);
         panelBackground.setLayout(panelBackgroundLayout);
@@ -191,6 +196,13 @@ public class menuPilihan extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tblKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblKeluarActionPerformed
+        // TODO add your handling code here:
+        Login login = new Login();
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_tblKeluarActionPerformed
 
     /**
      * @param args the command line arguments

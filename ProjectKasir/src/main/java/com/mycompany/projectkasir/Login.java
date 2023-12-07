@@ -4,6 +4,11 @@
  */
 package com.mycompany.projectkasir;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,8 +37,8 @@ public class Login extends javax.swing.JFrame {
         labelUsername = new javax.swing.JLabel();
         labelPassword = new javax.swing.JLabel();
         inputUsername = new javax.swing.JTextField();
-        inputPassword = new javax.swing.JTextField();
         tblLogin = new javax.swing.JButton();
+        inputPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 204, 0));
@@ -53,13 +58,18 @@ public class Login extends javax.swing.JFrame {
 
         inputUsername.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
 
-        inputPassword.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
-
         tblLogin.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         tblLogin.setText("LOGIN");
         tblLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tblLoginActionPerformed(evt);
+            }
+        });
+
+        inputPassword.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        inputPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputPasswordActionPerformed(evt);
             }
         });
 
@@ -112,15 +122,35 @@ public class Login extends javax.swing.JFrame {
         String username = inputUsername.getText();
         String password = inputPassword.getText();
         
-        if (username.equals("admin") && password.equals("admin")) {
+        if (isValidUser(username, password)){
             menuPilihan menu = new menuPilihan();
             menu.setVisible(true);
             this.dispose();
         } else {
-            JOptionPane.showMessageDialog(null, "Invalid Username and Admin");
+            JOptionPane.showMessageDialog(null, "Invalid Username or Password");
         }
     }//GEN-LAST:event_tblLoginActionPerformed
 
+    private void inputPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputPasswordActionPerformed
+
+    private boolean isValidUser(String username, String password){
+        try(Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/posdb", "root", "")){
+            String sql = "SELECT * FROM login WHERE username = ? AND password = ?";
+            try(PreparedStatement ps = cn.prepareStatement(sql)){
+                ps.setString(1, username);
+                ps.setString(2, password);
+                
+                try(ResultSet rs = ps.executeQuery()){
+                    return rs.next();
+                }
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return false;
+    }
     /**
      * @param args the command line arguments
      */
@@ -157,7 +187,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField inputPassword;
+    private javax.swing.JPasswordField inputPassword;
     private javax.swing.JTextField inputUsername;
     private javax.swing.JLabel labelJudul;
     private javax.swing.JLabel labelPassword;
