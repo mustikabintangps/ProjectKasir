@@ -13,6 +13,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import java.awt.BorderLayout;
+import java.sql.Statement;
 
 /**
  *
@@ -61,6 +65,18 @@ DefaultTableModel model;
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        kartuMember = new javax.swing.JDialog();
+        panelKartuMember = new javax.swing.JPanel();
+        labelJudulDialogMember = new javax.swing.JLabel();
+        labelNamaID = new javax.swing.JLabel();
+        labelNamaMember = new javax.swing.JLabel();
+        labelJenisKelaminDialog = new javax.swing.JLabel();
+        labelLogoMemberKanan = new javax.swing.JLabel();
+        labelLogoMemberKiri = new javax.swing.JLabel();
+        labelShowIDMember = new javax.swing.JLabel();
+        labelShowNamaMember = new javax.swing.JLabel();
+        labelShowJenisKelaminMember = new javax.swing.JLabel();
+        panelBackground = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -84,9 +100,109 @@ DefaultTableModel model;
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel1.setText("DATA BARANG ARGOMART");
 
+        panelKartuMember.setBackground(new java.awt.Color(255, 204, 204));
+
+        labelJudulDialogMember.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
+        labelJudulDialogMember.setForeground(new java.awt.Color(255, 102, 102));
+        labelJudulDialogMember.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelJudulDialogMember.setText("MEMBER ARGO MART");
+
+        labelNamaID.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        labelNamaID.setForeground(new java.awt.Color(255, 102, 102));
+        labelNamaID.setText("ID");
+
+        labelNamaMember.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        labelNamaMember.setForeground(new java.awt.Color(255, 102, 102));
+        labelNamaMember.setText("Nama");
+
+        labelJenisKelaminDialog.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        labelJenisKelaminDialog.setForeground(new java.awt.Color(255, 102, 102));
+        labelJenisKelaminDialog.setText("Jenis Kelamin");
+
+        labelLogoMemberKanan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLogoMemberKanan.setText("LOGO");
+
+        labelLogoMemberKiri.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLogoMemberKiri.setText("LOGO");
+
+        labelShowIDMember.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        labelShowIDMember.setForeground(new java.awt.Color(255, 102, 102));
+        labelShowIDMember.setText("test");
+
+        labelShowNamaMember.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        labelShowNamaMember.setForeground(new java.awt.Color(255, 102, 102));
+        labelShowNamaMember.setText("test");
+
+        labelShowJenisKelaminMember.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        labelShowJenisKelaminMember.setForeground(new java.awt.Color(255, 102, 102));
+        labelShowJenisKelaminMember.setText("test");
+
+        javax.swing.GroupLayout panelKartuMemberLayout = new javax.swing.GroupLayout(panelKartuMember);
+        panelKartuMember.setLayout(panelKartuMemberLayout);
+        panelKartuMemberLayout.setHorizontalGroup(
+            panelKartuMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelKartuMemberLayout.createSequentialGroup()
+                .addGroup(panelKartuMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelKartuMemberLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(panelKartuMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelJenisKelaminDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelNamaMember, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelNamaID, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(panelKartuMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelShowIDMember, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelShowNamaMember, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelShowJenisKelaminMember, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelKartuMemberLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(labelLogoMemberKiri, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelJudulDialogMember, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelLogoMemberKanan, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        panelKartuMemberLayout.setVerticalGroup(
+            panelKartuMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelKartuMemberLayout.createSequentialGroup()
+                .addGroup(panelKartuMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelJudulDialogMember, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                    .addComponent(labelLogoMemberKanan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelLogoMemberKiri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addGroup(panelKartuMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelNamaID)
+                    .addComponent(labelShowIDMember))
+                .addGap(18, 18, 18)
+                .addGroup(panelKartuMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelNamaMember)
+                    .addComponent(labelShowNamaMember))
+                .addGap(18, 18, 18)
+                .addGroup(panelKartuMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelJenisKelaminDialog)
+                    .addComponent(labelShowJenisKelaminMember))
+                .addGap(64, 64, 64))
+        );
+
+        javax.swing.GroupLayout kartuMemberLayout = new javax.swing.GroupLayout(kartuMember.getContentPane());
+        kartuMember.getContentPane().setLayout(kartuMemberLayout);
+        kartuMemberLayout.setHorizontalGroup(
+            kartuMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelKartuMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        kartuMemberLayout.setVerticalGroup(
+            kartuMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelKartuMember, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        panelBackground.setBackground(new java.awt.Color(255, 204, 204));
+
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 102, 102));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("DATA MEMBER AGORMART");
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
@@ -95,11 +211,13 @@ DefaultTableModel model;
         jLabel3.setText("LOGO");
 
         labelNama.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelNama.setForeground(new java.awt.Color(255, 102, 102));
         labelNama.setText("Nama");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         labelNoHp.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelNoHp.setForeground(new java.awt.Color(255, 102, 102));
         labelNoHp.setText("No HP");
 
         inputNoHp.addActionListener(new java.awt.event.ActionListener() {
@@ -122,6 +240,7 @@ DefaultTableModel model;
         jScrollPane1.setViewportView(tabelDataMember);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 102, 102));
         jLabel7.setText("Pencarian Data");
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
@@ -147,9 +266,11 @@ DefaultTableModel model;
         });
 
         labelAlamat.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelAlamat.setForeground(new java.awt.Color(255, 102, 102));
         labelAlamat.setText("Alamat");
 
         labelJenisKelamin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelJenisKelamin.setForeground(new java.awt.Color(255, 102, 102));
         labelJenisKelamin.setText("Jenis Kelamin");
 
         inputJenisKelamin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-Laki", "Perempuan" }));
@@ -245,31 +366,35 @@ DefaultTableModel model;
                 .addGap(18, 18, 18))
         );
 
+        javax.swing.GroupLayout panelBackgroundLayout = new javax.swing.GroupLayout(panelBackground);
+        panelBackground.setLayout(panelBackgroundLayout);
+        panelBackgroundLayout.setHorizontalGroup(
+            panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBackgroundLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelBackgroundLayout.setVerticalGroup(
+            panelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBackgroundLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addComponent(jLabel2)
-                .addContainerGap(104, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(24, 24, 24)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(20, Short.MAX_VALUE)))
+            .addComponent(panelBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel2)
-                .addContainerGap(446, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(101, 101, 101)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(31, Short.MAX_VALUE)))
+            .addComponent(panelBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -297,13 +422,28 @@ DefaultTableModel model;
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/posdb", "root", "");
             String query = "INSERT INTO datamember (nama, alamat, noHP, jenisKelamin) VALUES (?,?,?,?)";
-            PreparedStatement ps = conn.prepareStatement(query);
+            PreparedStatement ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, nama);
             ps.setString(2, alamat);
             ps.setString(3, noHP);
             ps.setString(4, jenisKelamin);
             int result = ps.executeUpdate();
+            
             if (result > 0) {
+                ResultSet generatedKeys = ps.getGeneratedKeys();
+                if(generatedKeys.next()){
+                    int generatedID = generatedKeys.getInt(1);
+                    
+                    kartuMember infoDialog = new kartuMember();
+                    infoDialog.setTitle("Data Saved");
+                    infoDialog.setLayout(new BorderLayout());
+                    infoDialog.add(new JLabel("ID: " + generatedID), BorderLayout.NORTH);
+                    infoDialog.add(new JLabel("Nama: " + nama), BorderLayout.CENTER);
+                    infoDialog.add(new JLabel("Jenis Kelamin: " + jenisKelamin), BorderLayout.SOUTH);
+                    infoDialog.setSize(500, 300);
+                    infoDialog.setVisible(true);
+                }
+                
                 JOptionPane.showMessageDialog(this, "Data berhasil disimpan");
                 tampilkan();
             } else {
@@ -364,10 +504,22 @@ DefaultTableModel model;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JDialog kartuMember;
     private javax.swing.JLabel labelAlamat;
     private javax.swing.JLabel labelJenisKelamin;
+    private javax.swing.JLabel labelJenisKelaminDialog;
+    private javax.swing.JLabel labelJudulDialogMember;
+    private javax.swing.JLabel labelLogoMemberKanan;
+    private javax.swing.JLabel labelLogoMemberKiri;
     private javax.swing.JLabel labelNama;
+    private javax.swing.JLabel labelNamaID;
+    private javax.swing.JLabel labelNamaMember;
     private javax.swing.JLabel labelNoHp;
+    private javax.swing.JLabel labelShowIDMember;
+    private javax.swing.JLabel labelShowJenisKelaminMember;
+    private javax.swing.JLabel labelShowNamaMember;
+    private javax.swing.JPanel panelBackground;
+    private javax.swing.JPanel panelKartuMember;
     private javax.swing.JTable tabelDataMember;
     private javax.swing.JButton tblEditMember;
     private javax.swing.JButton tblHapusMember;
