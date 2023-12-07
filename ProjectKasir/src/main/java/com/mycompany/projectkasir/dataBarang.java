@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -138,6 +139,11 @@ public class dataBarang extends javax.swing.JFrame {
         });
 
         btnHapusDataBarang.setText("Hapus");
+        btnHapusDataBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHapusDataBarangActionPerformed(evt);
+            }
+        });
 
         btnSimpanDataBarang.setText("Simpan");
         btnSimpanDataBarang.addActionListener(new java.awt.event.ActionListener() {
@@ -289,6 +295,39 @@ public class dataBarang extends javax.swing.JFrame {
             Logger.getLogger(dataBarang.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnSimpanDataBarangActionPerformed
+
+    private void btnHapusDataBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusDataBarangActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tabelDataBarang.getSelectedRow();
+        
+        if (selectedRow == -1){
+            JOptionPane.showMessageDialog(this, "Pilih baris yang akan dihapus!");
+        } else {
+            String idbarangdelete = tabelDataBarang.getValueAt(selectedRow, 0).toString();
+            
+        model.removeRow(selectedRow);
+            
+        try {
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/posdb", "root", "");
+            String query = "DELETE FROM databarang WHERE idBarang = ?";
+            try (PreparedStatement ps = cn.prepareStatement(query)){
+                ps.setString(1, idbarangdelete);
+                int result = ps.executeUpdate();
+                if (result >0){
+                    JOptionPane.showMessageDialog(this, "Data berhasil dihapus!");
+                    tampilkan();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Gagal menghapus data.");
+                }
+                ps.close();
+           }
+           cn.close();
+        }catch (SQLException ex){
+            Logger.getLogger(dataBarang.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Terjadi kesalahan saat menghubungkan ke database.");
+        }
+        }
+    }//GEN-LAST:event_btnHapusDataBarangActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,6 +4,8 @@
  */
 package com.mycompany.projectkasir;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ASUS
@@ -55,6 +57,11 @@ public class Login extends javax.swing.JFrame {
 
         tblLogin.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
         tblLogin.setText("LOGIN");
+        tblLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblLoginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,6 +106,20 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tblLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblLoginActionPerformed
+        // TODO add your handling code here:
+        String username = inputUsername.getText();
+        String password = inputPassword.getText();
+        
+        if (username.equals("admin") && password.equals("admin")) {
+            menuPilihan menu = new menuPilihan();
+            menu.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Invalid Username and Admin");
+        }
+    }//GEN-LAST:event_tblLoginActionPerformed
 
     /**
      * @param args the command line arguments
