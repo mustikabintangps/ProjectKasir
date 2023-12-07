@@ -59,6 +59,11 @@ public class menuPilihan extends javax.swing.JFrame {
         tblDataBarang.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
         tblDataBarang.setForeground(new java.awt.Color(255, 255, 255));
         tblDataBarang.setText("Data Barang");
+        tblDataBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblDataBarangActionPerformed(evt);
+            }
+        });
 
         tblDataMember.setBackground(new java.awt.Color(255, 102, 102));
         tblDataMember.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
@@ -203,6 +208,10 @@ public class menuPilihan extends javax.swing.JFrame {
         login.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_tblKeluarActionPerformed
+
+    private void tblDataBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblDataBarangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblDataBarangActionPerformed
 
     /**
      * @param args the command line arguments
