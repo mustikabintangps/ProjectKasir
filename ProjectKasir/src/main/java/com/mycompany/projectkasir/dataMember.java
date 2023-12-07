@@ -413,7 +413,8 @@ DefaultTableModel model;
     }//GEN-LAST:event_tblEditMemberActionPerformed
 
     private void tblSimpanMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblSimpanMemberActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here
+        
         String nama = inputNama.getText();
         String alamat = inputAlamat.getText();
         String noHP = inputNoHp.getText();
@@ -427,25 +428,26 @@ DefaultTableModel model;
             ps.setString(2, alamat);
             ps.setString(3, noHP);
             ps.setString(4, jenisKelamin);
+            
             int result = ps.executeUpdate();
             
             if (result > 0) {
+                
                 ResultSet generatedKeys = ps.getGeneratedKeys();
+                
                 if(generatedKeys.next()){
                     int generatedID = generatedKeys.getInt(1);
                     
-                    kartuMember infoDialog = new kartuMember();
-                    infoDialog.setTitle("Data Saved");
-                    infoDialog.setLayout(new BorderLayout());
-                    infoDialog.add(new JLabel("ID: " + generatedID), BorderLayout.NORTH);
-                    infoDialog.add(new JLabel("Nama: " + nama), BorderLayout.CENTER);
-                    infoDialog.add(new JLabel("Jenis Kelamin: " + jenisKelamin), BorderLayout.SOUTH);
-                    infoDialog.setSize(500, 300);
-                    infoDialog.setVisible(true);
+                    JOptionPane.showMessageDialog(this, "Data berhasil disimpan");
+                    tampilkan();
+                    
+                    this.kartuMember.setVisible(true);
+                    this.labelShowIDMember.setText(Integer.toString(generatedID));
+                    this.labelShowNamaMember.setText(nama);
+                    this.labelShowJenisKelaminMember.setText(jenisKelamin);
+                    this.kartuMember.setSize(500, 309);
                 }
                 
-                JOptionPane.showMessageDialog(this, "Data berhasil disimpan");
-                tampilkan();
             } else {
                 JOptionPane.showMessageDialog(this, "Gagal menyimpan data");
             }
