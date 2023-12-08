@@ -45,7 +45,7 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="19" max="32767" attributes="0"/>
+              <EmptySpace pref="25" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -74,31 +74,32 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="labelIdBarang" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
-                              <Component id="labelNamaBarang" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
-                              <Component id="labelHargaBarang" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="inputNamaBarang" min="-2" pref="196" max="-2" attributes="0"/>
-                              <Component id="inputIdBarang" min="-2" pref="196" max="-2" attributes="0"/>
-                              <Component id="inputHargaBarang" min="-2" pref="196" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnSimpanDataBarang" min="-2" pref="329" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="labelNamaBarang" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
+                                      <Component id="labelHargaBarang" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
+                                      <Component id="labelIdBarang1" alignment="1" min="-2" pref="127" max="-2" attributes="0"/>
+                                      <Component id="labelStok" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="inputNamaBarang" min="-2" pref="196" max="-2" attributes="0"/>
+                                      <Component id="inputIdBarang" min="-2" pref="196" max="-2" attributes="0"/>
+                                      <Component id="inputHargaBarang" min="-2" pref="196" max="-2" attributes="0"/>
+                                      <Component id="inputStok" min="-2" pref="196" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="btnSimpanDataBarang" min="-2" pref="329" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="BtnEditDataBarang" min="-2" pref="154" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btnHapusDataBarang" min="-2" pref="157" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="38" max="32767" attributes="0"/>
@@ -130,31 +131,36 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="51" max="32767" attributes="0"/>
+                          <EmptySpace pref="45" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="labelIdBarang" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="inputIdBarang" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelIdBarang1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="labelNamaBarang" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="inputNamaBarang" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="labelHargaBarang" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="inputHargaBarang" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labelStok" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputStok" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnSimpanDataBarang" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="BtnEditDataBarang" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnHapusDataBarang" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -168,12 +174,12 @@
             <Property name="text" type="java.lang.String" value="LOGO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="labelIdBarang">
+        <Component class="javax.swing.JLabel" name="labelStok">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="ID Barang"/>
+            <Property name="text" type="java.lang.String" value="Stok"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="labelHargaBarang">
@@ -259,6 +265,19 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSimpanDataBarangActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="labelIdBarang1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="ID Barang"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="inputStok">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputStokActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

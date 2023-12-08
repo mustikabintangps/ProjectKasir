@@ -28,7 +28,7 @@ public class dataBarang extends javax.swing.JFrame {
     
     public dataBarang() {
         initComponents();
-        String[] judul = {"ID Barang", "Nama Barang", "Harga Barang"};
+        String[] judul = {"ID Barang", "Nama Barang", "Harga Barang", "Stok Barang"};
         model = new DefaultTableModel(judul, 0);
         this.tabelDataBarang.setModel(model);
         tampilkan();
@@ -43,7 +43,7 @@ public class dataBarang extends javax.swing.JFrame {
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/posdb", "root", "");
             ResultSet rs =cn.createStatement().executeQuery("SELECT * FROM databarang");
             while(rs.next()){
-                String data [] = {rs.getString(1), rs.getString(2), rs.getString(3)};
+                String data [] = {rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)};
                 model.addRow(data);
             }
         } catch (SQLException ex){
@@ -64,7 +64,7 @@ public class dataBarang extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        labelIdBarang = new javax.swing.JLabel();
+        labelStok = new javax.swing.JLabel();
         labelHargaBarang = new javax.swing.JLabel();
         labelNamaBarang = new javax.swing.JLabel();
         inputIdBarang = new javax.swing.JTextField();
@@ -77,6 +77,8 @@ public class dataBarang extends javax.swing.JFrame {
         BtnEditDataBarang = new javax.swing.JButton();
         btnHapusDataBarang = new javax.swing.JButton();
         btnSimpanDataBarang = new javax.swing.JButton();
+        labelIdBarang1 = new javax.swing.JLabel();
+        inputStok = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,8 +90,8 @@ public class dataBarang extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel2.setText("LOGO");
 
-        labelIdBarang.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        labelIdBarang.setText("ID Barang");
+        labelStok.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelStok.setText("Stok");
 
         labelHargaBarang.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         labelHargaBarang.setText("Harga Barang");
@@ -152,6 +154,15 @@ public class dataBarang extends javax.swing.JFrame {
             }
         });
 
+        labelIdBarang1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelIdBarang1.setText("ID Barang");
+
+        inputStok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputStokActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -161,25 +172,26 @@ public class dataBarang extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelIdBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelHargaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputIdBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputHargaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelHargaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelIdBarang1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelStok, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(inputNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(inputIdBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(inputHargaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(inputStok, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(btnSimpanDataBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(BtnEditDataBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnHapusDataBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(btnHapusDataBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(jLabel2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -203,25 +215,29 @@ public class dataBarang extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(63, 63, 63)
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelIdBarang)
-                            .addComponent(inputIdBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
+                            .addComponent(inputIdBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelIdBarang1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelNamaBarang)
                             .addComponent(inputNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(36, 36, 36)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelHargaBarang)
                             .addComponent(inputHargaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(35, 35, 35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelStok)
+                            .addComponent(inputStok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addComponent(btnSimpanDataBarang)
-                        .addGap(13, 13, 13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BtnEditDataBarang)
                             .addComponent(btnHapusDataBarang))))
-                .addGap(27, 27, 27))
+                .addGap(66, 66, 66))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -245,7 +261,7 @@ public class dataBarang extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -272,16 +288,18 @@ public class dataBarang extends javax.swing.JFrame {
         String idBarang = inputIdBarang.getText();
         String namaBarang = inputNamaBarang.getText();
         String hargaBarang = inputHargaBarang.getText();
+        String stokBarang = inputStok.getText();
         
         hargaBarang = "Rp. " + hargaBarang;
         
         try{
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/posdb", "root", "");
-            String query = "INSERT INTO databarang (idBarang, namaBarang, hargaBarang) VALUES (?,?,?)";
+            String query = "INSERT INTO databarang (idBarang, namaBarang, hargaBarang, stokBarang) VALUES (?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, idBarang);
             ps.setString(2, namaBarang);
             ps.setString(3, hargaBarang);
+            ps.setString(4, stokBarang);
         int result = ps.executeUpdate();
             if(result > 0){
                 JOptionPane.showMessageDialog(this, "Data berhasil disimpan");
@@ -329,6 +347,10 @@ public class dataBarang extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnHapusDataBarangActionPerformed
 
+    private void inputStokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputStokActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputStokActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -371,14 +393,16 @@ public class dataBarang extends javax.swing.JFrame {
     private javax.swing.JTextField inputHargaBarang;
     private javax.swing.JTextField inputIdBarang;
     private javax.swing.JTextField inputNamaBarang;
+    private javax.swing.JTextField inputStok;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelHargaBarang;
-    private javax.swing.JLabel labelIdBarang;
+    private javax.swing.JLabel labelIdBarang1;
     private javax.swing.JLabel labelNamaBarang;
+    private javax.swing.JLabel labelStok;
     private javax.swing.JTextField pencarianDataBarang;
     private javax.swing.JTable tabelDataBarang;
     // End of variables declaration//GEN-END:variables
