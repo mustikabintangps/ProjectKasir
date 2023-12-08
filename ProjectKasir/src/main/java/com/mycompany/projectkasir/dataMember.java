@@ -120,7 +120,7 @@ DefaultTableModel model;
         labelJenisKelaminDialog.setText("Jenis Kelamin");
 
         labelLogoMemberKiri.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelLogoMemberKiri.setText("LOGO");
+        labelLogoMemberKiri.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logo Praktikum Pemrog Part 2 KARTU MEMBER.png"))); // NOI18N
 
         labelShowIDMember.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 18)); // NOI18N
         labelShowIDMember.setForeground(new java.awt.Color(255, 102, 102));
@@ -177,7 +177,9 @@ DefaultTableModel model;
                         .addGroup(panelKartuMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelJenisKelaminDialog)
                             .addComponent(labelShowJenisKelaminMember)))
-                    .addComponent(labelLogoMemberKiri, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelKartuMemberLayout.createSequentialGroup()
+                        .addComponent(labelLogoMemberKiri, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(64, 64, 64))
         );
 
