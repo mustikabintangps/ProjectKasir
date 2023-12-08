@@ -95,6 +95,7 @@ DefaultTableModel model;
         labelJenisKelamin = new javax.swing.JLabel();
         inputAlamat = new javax.swing.JTextField();
         inputJenisKelamin = new javax.swing.JComboBox<>();
+        tblBackDataMember = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel1.setText("DATA BARANG ARGOMART");
@@ -279,6 +280,13 @@ DefaultTableModel model;
 
         inputJenisKelamin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-Laki", "Perempuan" }));
 
+        tblBackDataMember.setText("Back");
+        tblBackDataMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblBackDataMemberActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -303,12 +311,13 @@ DefaultTableModel model;
                                 .addComponent(inputNama)
                                 .addComponent(inputNoHp)
                                 .addComponent(inputJenisKelamin, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(tblEditMember, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tblHapusMember, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tblBackDataMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -352,12 +361,15 @@ DefaultTableModel model;
                                 .addComponent(inputJenisKelamin, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(1, 1, 1))
                             .addComponent(labelJenisKelamin))
-                        .addGap(49, 49, 49)
+                        .addGap(24, 24, 24)
                         .addComponent(tblSimpanMember)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tblEditMember)
-                            .addComponent(tblHapusMember))))
+                            .addComponent(tblHapusMember))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tblBackDataMember)
+                        .addGap(2, 2, 2)))
                 .addContainerGap())
         );
 
@@ -485,6 +497,13 @@ DefaultTableModel model;
         }
     }//GEN-LAST:event_tblHapusMemberActionPerformed
 
+    private void tblBackDataMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblBackDataMemberActionPerformed
+        // TODO add your handling code here:
+        menuPilihan menu = new menuPilihan();
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_tblBackDataMemberActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -549,6 +568,7 @@ DefaultTableModel model;
     private javax.swing.JPanel panelBackground;
     private javax.swing.JPanel panelKartuMember;
     private javax.swing.JTable tabelDataMember;
+    private javax.swing.JButton tblBackDataMember;
     private javax.swing.JButton tblEditMember;
     private javax.swing.JButton tblHapusMember;
     private javax.swing.JButton tblSimpanMember;
