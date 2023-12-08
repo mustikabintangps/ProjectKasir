@@ -69,6 +69,11 @@ public class menuPilihan extends javax.swing.JFrame {
         tblDataMember.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
         tblDataMember.setForeground(new java.awt.Color(255, 255, 255));
         tblDataMember.setText("Data Member");
+        tblDataMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblDataMemberActionPerformed(evt);
+            }
+        });
 
         deskopInputData.setLayer(labelInputData, javax.swing.JLayeredPane.DEFAULT_LAYER);
         deskopInputData.setLayer(tblDataBarang, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -109,11 +114,21 @@ public class menuPilihan extends javax.swing.JFrame {
         tblProsesTransaksi.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
         tblProsesTransaksi.setForeground(new java.awt.Color(255, 255, 255));
         tblProsesTransaksi.setText("Proses Transaksi");
+        tblProsesTransaksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblProsesTransaksiActionPerformed(evt);
+            }
+        });
 
         tblRiwayatTransaksi.setBackground(new java.awt.Color(255, 102, 102));
         tblRiwayatTransaksi.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
         tblRiwayatTransaksi.setForeground(new java.awt.Color(255, 255, 255));
         tblRiwayatTransaksi.setText("Riwayat Transaksi");
+        tblRiwayatTransaksi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblRiwayatTransaksiActionPerformed(evt);
+            }
+        });
 
         deskopTransaksi.setLayer(labelTransaksi, javax.swing.JLayeredPane.DEFAULT_LAYER);
         deskopTransaksi.setLayer(tblProsesTransaksi, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -211,7 +226,28 @@ public class menuPilihan extends javax.swing.JFrame {
 
     private void tblDataBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblDataBarangActionPerformed
         // TODO add your handling code here:
+        dataBarang db = new dataBarang();
+        db.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_tblDataBarangActionPerformed
+
+    private void tblDataMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblDataMemberActionPerformed
+        // TODO add your handling code here:
+        dataMember dm = new dataMember();
+        dm.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_tblDataMemberActionPerformed
+
+    private void tblProsesTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblProsesTransaksiActionPerformed
+        // TODO add your handling code here:
+        Transaksi tr = new Transaksi();
+        tr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_tblProsesTransaksiActionPerformed
+
+    private void tblRiwayatTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblRiwayatTransaksiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblRiwayatTransaksiActionPerformed
 
     /**
      * @param args the command line arguments

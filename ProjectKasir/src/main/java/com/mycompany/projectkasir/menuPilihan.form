@@ -177,6 +177,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Data Member"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tblDataMemberActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -241,6 +244,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Proses Transaksi"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tblProsesTransaksiActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="tblRiwayatTransaksi">
               <Properties>
@@ -255,6 +261,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Riwayat Transaksi"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tblRiwayatTransaksiActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
