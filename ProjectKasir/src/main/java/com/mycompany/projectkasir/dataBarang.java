@@ -61,6 +61,18 @@ public class dataBarang extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        editDataBarang = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        labelUpdateDataBarang = new javax.swing.JLabel();
+        labelNamaBarangUPDATE = new javax.swing.JLabel();
+        inputNamaBarangUPDATE = new javax.swing.JTextField();
+        inputHargaBarangUPDATE = new javax.swing.JTextField();
+        labelHargaUPDATE = new javax.swing.JLabel();
+        labelStokBarangUPDATE = new javax.swing.JLabel();
+        inputStokBarangUPDATE = new javax.swing.JTextField();
+        tblUpdateDataBarang = new javax.swing.JButton();
+        labelIDBarangTarget = new javax.swing.JLabel();
+        inputIDBarangTarget = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -79,6 +91,110 @@ public class dataBarang extends javax.swing.JFrame {
         btnSimpanDataBarang = new javax.swing.JButton();
         labelIdBarang1 = new javax.swing.JLabel();
         inputStok = new javax.swing.JTextField();
+
+        jPanel2.setForeground(new java.awt.Color(255, 204, 204));
+
+        labelUpdateDataBarang.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 18)); // NOI18N
+        labelUpdateDataBarang.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelUpdateDataBarang.setText("UPDATE DATA BARANG");
+
+        labelNamaBarangUPDATE.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        labelNamaBarangUPDATE.setText("NAMA");
+
+        inputNamaBarangUPDATE.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+
+        inputHargaBarangUPDATE.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+
+        labelHargaUPDATE.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        labelHargaUPDATE.setText("HARGA");
+
+        labelStokBarangUPDATE.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        labelStokBarangUPDATE.setText("STOCK");
+
+        inputStokBarangUPDATE.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+
+        tblUpdateDataBarang.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
+        tblUpdateDataBarang.setText("UPDATE");
+        tblUpdateDataBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblUpdateDataBarangActionPerformed(evt);
+            }
+        });
+
+        labelIDBarangTarget.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 12)); // NOI18N
+        labelIDBarangTarget.setText("ID Barang Target");
+
+        inputIDBarangTarget.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        inputIDBarangTarget.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputIDBarangTargetActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(labelUpdateDataBarang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(labelIDBarangTarget, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(inputIDBarangTarget, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(labelHargaUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(inputHargaBarangUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(labelNamaBarangUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(inputNamaBarangUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(labelStokBarangUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(inputStokBarangUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tblUpdateDataBarang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelUpdateDataBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelIDBarangTarget, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputIDBarangTarget, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelNamaBarangUPDATE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputNamaBarangUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelHargaUPDATE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputHargaBarangUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelStokBarangUPDATE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputStokBarangUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(tblUpdateDataBarang)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout editDataBarangLayout = new javax.swing.GroupLayout(editDataBarang.getContentPane());
+        editDataBarang.getContentPane().setLayout(editDataBarangLayout);
+        editDataBarangLayout.setHorizontalGroup(
+            editDataBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        editDataBarangLayout.setVerticalGroup(
+            editDataBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -277,6 +393,10 @@ public class dataBarang extends javax.swing.JFrame {
 
     private void BtnEditDataBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditDataBarangActionPerformed
         // TODO add your handling code here:
+        this.editDataBarang.setLocationRelativeTo(this);
+        this.editDataBarang.setVisible(true);
+        this.editDataBarang.setSize(380, 350);
+        
     }//GEN-LAST:event_BtnEditDataBarangActionPerformed
 
     private void inputHargaBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputHargaBarangActionPerformed
@@ -351,6 +471,65 @@ public class dataBarang extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputStokActionPerformed
 
+    private void tblUpdateDataBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblUpdateDataBarangActionPerformed
+        String url = "jdbc:mysql://localhost:3306/posdb";
+        String user = "root";
+        String password = "";
+
+        try (Connection connection = DriverManager.getConnection(url, user, password)) {
+            String noBukuTarget = this.inputIDBarangTarget.getText();
+            String querySelect = "SELECT * FROM databarang WHERE idBarang=?";
+            try (PreparedStatement preparedStatementSelect = connection.prepareStatement(querySelect)) {
+                preparedStatementSelect.setString(1, noBukuTarget);
+                ResultSet resultSet = preparedStatementSelect.executeQuery();
+
+                if (resultSet.next()) {
+                    String namaBarangLama = resultSet.getString("namaBarang");
+                    String hargaBarangLama = resultSet.getString("hargaBarang");
+                    String stokBarangLama = resultSet.getString("stokBarang");
+
+                    String namaBarangBaru = this.inputNamaBarangUPDATE.getText();
+                    String hargaBarangBaru = this.inputHargaBarangUPDATE.getText();
+                    String stokBarangBaru = this.inputStokBarangUPDATE.getText();
+
+                    if (!namaBarangLama.equals(namaBarangBaru) || !hargaBarangLama.equals(hargaBarangBaru) || !stokBarangLama.equals(stokBarangBaru)) {
+                        String queryUpdate = "UPDATE databarang SET namaBarang=?, hargaBarang=?, stokBarang=? WHERE idBarang=?";
+                        try (PreparedStatement preparedStatementUpdate = connection.prepareStatement(queryUpdate)) {
+                            preparedStatementUpdate.setString(1, namaBarangBaru);
+                            preparedStatementUpdate.setString(2, hargaBarangBaru);
+                            preparedStatementUpdate.setString(3, stokBarangBaru);
+                            preparedStatementUpdate.setString(4, noBukuTarget);
+
+                            int result = preparedStatementUpdate.executeUpdate();
+                            preparedStatementUpdate.close();
+
+                            if (result > 0) {
+                                JOptionPane.showMessageDialog(this, "Data berhasil diupdate", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+                                tampilkan();
+                            } else {
+                                JOptionPane.showMessageDialog(this, "Gagal menyimpan data", "Error", JOptionPane.ERROR_MESSAGE);
+                            }
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Data tidak berubah", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Data tidak ditemukan", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Gagal terhubung ke database", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        this.editDataBarang.dispose();
+        
+    }//GEN-LAST:event_tblUpdateDataBarangActionPerformed
+
+    private void inputIDBarangTargetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIDBarangTargetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputIDBarangTargetActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -390,20 +569,32 @@ public class dataBarang extends javax.swing.JFrame {
     private javax.swing.JButton BtnEditDataBarang;
     private javax.swing.JButton btnHapusDataBarang;
     private javax.swing.JButton btnSimpanDataBarang;
+    private javax.swing.JDialog editDataBarang;
     private javax.swing.JTextField inputHargaBarang;
+    private javax.swing.JTextField inputHargaBarangUPDATE;
+    private javax.swing.JTextField inputIDBarangTarget;
     private javax.swing.JTextField inputIdBarang;
     private javax.swing.JTextField inputNamaBarang;
+    private javax.swing.JTextField inputNamaBarangUPDATE;
     private javax.swing.JTextField inputStok;
+    private javax.swing.JTextField inputStokBarangUPDATE;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelHargaBarang;
+    private javax.swing.JLabel labelHargaUPDATE;
+    private javax.swing.JLabel labelIDBarangTarget;
     private javax.swing.JLabel labelIdBarang1;
     private javax.swing.JLabel labelNamaBarang;
+    private javax.swing.JLabel labelNamaBarangUPDATE;
     private javax.swing.JLabel labelStok;
+    private javax.swing.JLabel labelStokBarangUPDATE;
+    private javax.swing.JLabel labelUpdateDataBarang;
     private javax.swing.JTextField pencarianDataBarang;
     private javax.swing.JTable tabelDataBarang;
+    private javax.swing.JButton tblUpdateDataBarang;
     // End of variables declaration//GEN-END:variables
 }
