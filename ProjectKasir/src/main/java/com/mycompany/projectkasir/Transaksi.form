@@ -19,11 +19,11 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="kolomtotal" max="32767" attributes="0"/>
-                                  <Component id="kolomkembalian" alignment="0" pref="180" max="32767" attributes="0"/>
+                              <Component id="kolomtotal" min="-2" pref="180" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="kolomkembalian" alignment="0" pref="171" max="32767" attributes="0"/>
+                                  <Component id="kolombayar" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="kolombayar" min="-2" pref="171" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
@@ -46,11 +46,11 @@
                       <Component id="kolombayar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="kolomkembalian" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                      <Component id="kolomkembalian" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="okdialog" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="56" max="32767" attributes="0"/>
               </Group>
@@ -86,14 +86,15 @@
             <Property name="text" type="java.lang.String" value="tes"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="kolomkembalian">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="tes"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="kolombayar">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kolombayarActionPerformed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="kolombayarKeyReleased"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="kolomkembalian">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kolomkembalianActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
