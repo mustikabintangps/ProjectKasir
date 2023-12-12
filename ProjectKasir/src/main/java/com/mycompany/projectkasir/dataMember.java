@@ -13,9 +13,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import java.awt.BorderLayout;
 import java.sql.Statement;
 
 /**
@@ -75,6 +72,20 @@ DefaultTableModel model;
         labelShowIDMember = new javax.swing.JLabel();
         labelShowNamaMember = new javax.swing.JLabel();
         labelShowJenisKelaminMember = new javax.swing.JLabel();
+        editDataMember = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        labelUpdateDataMember = new javax.swing.JLabel();
+        labelNamaDataMember = new javax.swing.JLabel();
+        inputNamaMemberUPDATE = new javax.swing.JTextField();
+        inputAlamatUPDATE = new javax.swing.JTextField();
+        labelAlamatUPDATE = new javax.swing.JLabel();
+        labelNoHPUpdate = new javax.swing.JLabel();
+        inputNoHpUPDATE = new javax.swing.JTextField();
+        tblUpdateDataMember = new javax.swing.JButton();
+        labelIDTarget = new javax.swing.JLabel();
+        inputIDMemberTarget = new javax.swing.JTextField();
+        labelJenisKelaminUPDATE = new javax.swing.JLabel();
+        inputJenisKelaminUPDATE = new javax.swing.JComboBox<>();
         panelBackground = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -193,6 +204,125 @@ DefaultTableModel model;
         kartuMemberLayout.setVerticalGroup(
             kartuMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelKartuMember, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jPanel2.setForeground(new java.awt.Color(255, 204, 204));
+
+        labelUpdateDataMember.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 18)); // NOI18N
+        labelUpdateDataMember.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelUpdateDataMember.setText("UPDATE DATA MEMEBER");
+
+        labelNamaDataMember.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        labelNamaDataMember.setText("NAMA");
+
+        inputNamaMemberUPDATE.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+
+        inputAlamatUPDATE.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+
+        labelAlamatUPDATE.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        labelAlamatUPDATE.setText("ALAMAT");
+
+        labelNoHPUpdate.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        labelNoHPUpdate.setText("NO HP");
+
+        inputNoHpUPDATE.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+
+        tblUpdateDataMember.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
+        tblUpdateDataMember.setText("UPDATE");
+        tblUpdateDataMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tblUpdateDataMemberActionPerformed(evt);
+            }
+        });
+
+        labelIDTarget.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 10)); // NOI18N
+        labelIDTarget.setText("ID MEMBER TARGET");
+
+        inputIDMemberTarget.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        inputIDMemberTarget.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputIDMemberTargetActionPerformed(evt);
+            }
+        });
+
+        labelJenisKelaminUPDATE.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        labelJenisKelaminUPDATE.setText("Jenis Kelamin");
+
+        inputJenisKelaminUPDATE.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        inputJenisKelaminUPDATE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-Laki", "Perempuan" }));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(labelUpdateDataMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(labelJenisKelaminUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(inputJenisKelaminUPDATE, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(labelIDTarget, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(inputIDMemberTarget, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(labelAlamatUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(inputAlamatUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(labelNamaDataMember, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(inputNamaMemberUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(labelNoHPUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(inputNoHpUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tblUpdateDataMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelUpdateDataMember, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelIDTarget, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputIDMemberTarget, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelNamaDataMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputNamaMemberUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelAlamatUPDATE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputAlamatUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelNoHPUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputNoHpUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelJenisKelaminUPDATE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputJenisKelaminUPDATE, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(tblUpdateDataMember)
+                .addGap(22, 22, 22))
+        );
+
+        javax.swing.GroupLayout editDataMemberLayout = new javax.swing.GroupLayout(editDataMember.getContentPane());
+        editDataMember.getContentPane().setLayout(editDataMemberLayout);
+        editDataMemberLayout.setHorizontalGroup(
+            editDataMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        editDataMemberLayout.setVerticalGroup(
+            editDataMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -417,6 +547,9 @@ DefaultTableModel model;
 
     private void tblEditMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblEditMemberActionPerformed
         // TODO add your handling code here:
+        this.editDataMember.setLocationRelativeTo(this);
+        this.editDataMember.setVisible(true);
+        this.editDataMember.setSize(400, 400);
     }//GEN-LAST:event_tblEditMemberActionPerformed
 
     private void tblSimpanMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblSimpanMemberActionPerformed
@@ -504,6 +637,68 @@ DefaultTableModel model;
         this.dispose();
     }//GEN-LAST:event_tblBackDataMemberActionPerformed
 
+    private void tblUpdateDataMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblUpdateDataMemberActionPerformed
+        String url = "jdbc:mysql://localhost:3306/posdb";
+        String user = "root";
+        String password = "";
+        
+        try (Connection connection = DriverManager.getConnection(url, user, password)) {
+            String idTarget = this.inputIDMemberTarget.getText();
+            String querySelect = "SELECT * FROM datamember WHERE id=?";
+            try(PreparedStatement preparedStatementSelect = connection.prepareStatement(querySelect)){
+                preparedStatementSelect.setString(1, idTarget);
+                ResultSet resultSet = preparedStatementSelect.executeQuery();
+                
+                if(resultSet.next()){
+                    String namaLama = resultSet.getString("nama");
+                    String alamatLama = resultSet.getString("alamat");
+                    String noHPLama = resultSet.getString("noHP");
+                    String jenisKelaminLama = resultSet.getString("jenisKelamin");
+                    
+                    String namaBaru = this.inputNamaMemberUPDATE.getText();
+                    String alamatBaru = this.inputAlamatUPDATE.getText();
+                    String noHPBaru = this.inputNoHpUPDATE.getText();
+                    String jenisKelaminBaru = (String) this.inputJenisKelaminUPDATE.getSelectedItem();
+                    
+                    if (!namaLama.equals(namaBaru) || !alamatLama.equals(alamatBaru) || !noHPLama.equals(noHPBaru) || !jenisKelaminLama.equals(jenisKelaminBaru)){
+                        String queryUpdate = "UPDATE datamember SET nama=?, alamat=?, noHP=?, jenisKelamin=? WHERE id=?";
+                        try(PreparedStatement preparedStatementUpdate = connection.prepareStatement(queryUpdate)){
+                            preparedStatementUpdate.setString(1, namaBaru);
+                            preparedStatementUpdate.setString(2, alamatBaru);
+                            preparedStatementUpdate.setString(3, noHPBaru);
+                            preparedStatementUpdate.setString(4, jenisKelaminBaru);
+                            preparedStatementUpdate.setString(5, idTarget);
+                            
+                            int result = preparedStatementUpdate.executeUpdate();
+                            preparedStatementUpdate.close();
+                            
+                            if(result > 0){
+                                JOptionPane.showMessageDialog(this, "Data berhasil diupdate", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+                                tampilkan();
+                            } else{
+                                JOptionPane.showMessageDialog(this, "Gagal menyimpan data", "Error", JOptionPane.ERROR_MESSAGE);
+                            }
+                        }
+                    } else{
+                        JOptionPane.showMessageDialog(this, "Data tidak berubah", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                } else{
+                    JOptionPane.showMessageDialog(this, "Data tidak ditemukan", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            connection.close();
+        } catch(SQLException e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Gagal terhubung ke database", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        this.editDataMember.dispose();
+
+    }//GEN-LAST:event_tblUpdateDataMemberActionPerformed
+
+    private void inputIDMemberTargetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIDMemberTargetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputIDMemberTargetActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -540,31 +735,44 @@ DefaultTableModel model;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog editDataMember;
     private javax.swing.JTextField inputAlamat;
+    private javax.swing.JTextField inputAlamatUPDATE;
+    private javax.swing.JTextField inputIDMemberTarget;
     private javax.swing.JComboBox<String> inputJenisKelamin;
+    private javax.swing.JComboBox<String> inputJenisKelaminUPDATE;
     private javax.swing.JTextField inputNama;
+    private javax.swing.JTextField inputNamaMemberUPDATE;
     private javax.swing.JTextField inputNoHp;
+    private javax.swing.JTextField inputNoHpUPDATE;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JDialog kartuMember;
     private javax.swing.JLabel labelAlamat;
+    private javax.swing.JLabel labelAlamatUPDATE;
+    private javax.swing.JLabel labelIDTarget;
     private javax.swing.JLabel labelJenisKelamin;
     private javax.swing.JLabel labelJenisKelaminDialog;
+    private javax.swing.JLabel labelJenisKelaminUPDATE;
     private javax.swing.JLabel labelJudulDialogMember;
     private javax.swing.JLabel labelLogoMemberKiri;
     private javax.swing.JLabel labelNama;
+    private javax.swing.JLabel labelNamaDataMember;
     private javax.swing.JLabel labelNamaID;
     private javax.swing.JLabel labelNamaMember;
+    private javax.swing.JLabel labelNoHPUpdate;
     private javax.swing.JLabel labelNoHp;
     private javax.swing.JLabel labelShowIDMember;
     private javax.swing.JLabel labelShowJenisKelaminMember;
     private javax.swing.JLabel labelShowNamaMember;
+    private javax.swing.JLabel labelUpdateDataMember;
     private javax.swing.JPanel panelBackground;
     private javax.swing.JPanel panelKartuMember;
     private javax.swing.JTable tabelDataMember;
@@ -572,5 +780,6 @@ DefaultTableModel model;
     private javax.swing.JButton tblEditMember;
     private javax.swing.JButton tblHapusMember;
     private javax.swing.JButton tblSimpanMember;
+    private javax.swing.JButton tblUpdateDataMember;
     // End of variables declaration//GEN-END:variables
 }
