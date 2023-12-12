@@ -191,6 +191,14 @@ public class Transaksi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        kolomtotalharga = new javax.swing.JTextField();
+        kolombayar = new javax.swing.JTextField();
+        kolomkembalian = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        okdialog = new javax.swing.JButton();
         rp = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -214,6 +222,77 @@ public class Transaksi extends javax.swing.JFrame {
         tabeltransaksi = new javax.swing.JTable();
         status = new javax.swing.JComboBox<>();
         printstruk = new javax.swing.JButton();
+
+        kolomtotalharga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kolomtotalhargaActionPerformed(evt);
+            }
+        });
+
+        kolombayar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kolombayarActionPerformed(evt);
+            }
+        });
+
+        kolomkembalian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kolomkembalianActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Total Harga");
+
+        jLabel8.setText("Bayar");
+
+        jLabel9.setText("Kembalian");
+
+        okdialog.setText("OK");
+        okdialog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okdialogActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(okdialog)
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(kolomtotalharga)
+                            .addComponent(kolombayar)
+                            .addComponent(kolomkembalian, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))))
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(kolomtotalharga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(kolombayar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(kolomkembalian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addGap(26, 26, 26)
+                .addComponent(okdialog)
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -439,6 +518,37 @@ public class Transaksi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_kodebarangActionPerformed
 
+    private void totalharga() {
+        int sub_total = 0;
+        double diskon = 0;
+        double total = 0;
+
+        for (int i = 0; i < tabeltransaksi.getRowCount(); i++) {
+            sub_total += Integer.parseInt((String) tabeltransaksi.getValueAt(i, 5).toString());
+        }
+
+        diskon = sub_total * 0.1;
+        total = sub_total - diskon;
+
+        kolomtotalharga.setText("Rp." + df.format(total));
+    }
+    
+    private void kolomtotalhargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kolomtotalhargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kolomtotalhargaActionPerformed
+
+    private void kolombayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kolombayarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kolombayarActionPerformed
+
+    private void kolomkembalianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kolomkembalianActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kolomkembalianActionPerformed
+
+    private void okdialogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okdialogActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_okdialogActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -481,17 +591,25 @@ public class Transaksi extends javax.swing.JFrame {
     private javax.swing.JButton edit;
     private javax.swing.JButton hapus;
     private javax.swing.JTextField harga;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jumlahharga;
     private javax.swing.JTextField kodebarang;
+    private javax.swing.JTextField kolombayar;
+    private javax.swing.JTextField kolomkembalian;
     private javax.swing.JTextField kolomnofaktur;
+    private javax.swing.JTextField kolomtotalharga;
     private javax.swing.JTextField namabarang;
+    private javax.swing.JButton okdialog;
     private javax.swing.JButton printstruk;
     private javax.swing.JLabel rp;
     private javax.swing.JComboBox<String> status;
