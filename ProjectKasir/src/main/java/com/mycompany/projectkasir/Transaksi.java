@@ -228,6 +228,12 @@ public class Transaksi extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Kode Barang :");
 
+        kodebarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kodebarangActionPerformed(evt);
+            }
+        });
+
         namabarang.setEditable(false);
 
         harga.setEditable(false);
@@ -428,6 +434,10 @@ public class Transaksi extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_hapusActionPerformed
+
+    private void kodebarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kodebarangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kodebarangActionPerformed
 
     /**
      * @param args the command line arguments

@@ -49,6 +49,7 @@ public class menuPilihan extends javax.swing.JFrame {
         labelJudulMenu.setText("ARGOMART");
 
         deskopInputData.setBackground(new java.awt.Color(255, 153, 153));
+        deskopInputData.setForeground(new java.awt.Color(255, 102, 102));
 
         labelInputData.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 24)); // NOI18N
         labelInputData.setForeground(new java.awt.Color(255, 255, 255));

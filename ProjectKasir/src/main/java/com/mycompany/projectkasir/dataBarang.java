@@ -290,7 +290,7 @@ public class dataBarang extends javax.swing.JFrame {
         String hargaBarang = inputHargaBarang.getText();
         String stokBarang = inputStok.getText();
         
-        hargaBarang = "Rp. " + hargaBarang;
+//        hargaBarang = "Rp. " + hargaBarang;
         
         try{
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/posdb", "root", "");

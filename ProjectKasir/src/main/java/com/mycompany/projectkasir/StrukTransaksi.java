@@ -41,18 +41,19 @@ public class StrukTransaksi extends javax.swing.JFrame {
 
     private void insertData() {
         String namabarang;
-        int idbarang;
+        String idbarang;
         int kuantiti;
         String hargabarang;
         String totalHarga;
         for (int i = 0; i < datas.length; i++) {
-            idbarang = Integer.parseInt(datas[i][0]);
+            idbarang = datas[i][0];
             namabarang = datas[i][1];
             hargabarang = datas[i][2] ;
             kuantiti = Integer.parseInt(datas[i][3]);
             totalHarga = datas[i][4];
             
-            koneksi.insertTransaksi(namabarang, idbarang, kuantiti, hargabarang, totalHarga);
+//            koneksi.insertTransaksi(namabarang, kuantiti, hargabarang, totalHarga);
+            koneksi.insertTransaksi(namabarang, ABORT, kuantiti, hargabarang, totalHarga);
         }
     }
 
