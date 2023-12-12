@@ -23,6 +23,9 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import javax.swing.JTable;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+
 
 public class Transaksi extends javax.swing.JFrame {
 
@@ -191,7 +194,7 @@ public class Transaksi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDialog1 = new javax.swing.JDialog();
+        bayarin = new javax.swing.JDialog();
         kolomtotalharga = new javax.swing.JTextField();
         kolombayar = new javax.swing.JTextField();
         kolomkembalian = new javax.swing.JTextField();
@@ -254,44 +257,44 @@ public class Transaksi extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog1Layout.createSequentialGroup()
+        javax.swing.GroupLayout bayarinLayout = new javax.swing.GroupLayout(bayarin.getContentPane());
+        bayarin.getContentPane().setLayout(bayarinLayout);
+        bayarinLayout.setHorizontalGroup(
+            bayarinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bayarinLayout.createSequentialGroup()
                 .addGap(53, 53, 53)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(bayarinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(okdialog)
-                    .addGroup(jDialog1Layout.createSequentialGroup()
-                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(bayarinLayout.createSequentialGroup()
+                        .addGroup(bayarinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(bayarinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(kolomtotalharga)
                             .addComponent(kolombayar)
                             .addComponent(kolomkembalian, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog1Layout.createSequentialGroup()
+        bayarinLayout.setVerticalGroup(
+            bayarinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bayarinLayout.createSequentialGroup()
                 .addGap(69, 69, 69)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(bayarinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(kolomtotalharga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(bayarinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(kolombayar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(bayarinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(kolomkembalian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addGap(26, 26, 26)
                 .addComponent(okdialog)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -335,6 +338,11 @@ public class Transaksi extends javax.swing.JFrame {
         });
 
         bayar.setText("Bayar");
+        bayar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bayarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Total Harga");
@@ -517,21 +525,6 @@ public class Transaksi extends javax.swing.JFrame {
     private void kodebarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kodebarangActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_kodebarangActionPerformed
-
-    private void totalharga() {
-        int sub_total = 0;
-        double diskon = 0;
-        double total = 0;
-
-        for (int i = 0; i < tabeltransaksi.getRowCount(); i++) {
-            sub_total += Integer.parseInt((String) tabeltransaksi.getValueAt(i, 5).toString());
-        }
-
-        diskon = sub_total * 0.1;
-        total = sub_total - diskon;
-
-        kolomtotalharga.setText("Rp." + df.format(total));
-    }
     
     private void kolomtotalhargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kolomtotalhargaActionPerformed
         // TODO add your handling code here:
@@ -548,6 +541,43 @@ public class Transaksi extends javax.swing.JFrame {
     private void okdialogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okdialogActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_okdialogActionPerformed
+
+    private void bayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bayarActionPerformed
+        // TODO add your handling code here:                                     
+    bayarin.setSize(390, 250);
+    bayarin.setLocationRelativeTo(this);
+    
+    // Set visibility to true
+    bayarin.setVisible(true);
+    
+    totaljumlah();
+}
+
+private void totaljumlah() {
+    int sub_total = 0;
+    double diskon = 0;
+    double total = 0;
+
+    for (int i = 0; i < tabeltransaksi.getRowCount(); i++) {
+        sub_total += Integer.parseInt((String) tabeltransaksi.getValueAt(i, 5).toString());
+    }
+
+    diskon = sub_total * 0.1;
+    total = sub_total - diskon;
+
+    kolomtotalharga.setText("Rp." + df.format(total));
+    }//GEN-LAST:event_bayarActionPerformed
+
+ private void kembalian(double kolombayar) {
+    // Ambil total harga dari kolomtotalharga
+    double totalHarga = Double.parseDouble(kolomtotalharga.getText().replace("Rp.", "").replace(",", ""));
+
+    // Hitung kembalian
+    double kolomkembalian = kolombayar - totalHarga;
+
+    // Tampilkan kembalian
+    JOptionPane.showMessageDialog(this, "Kembalian: Rp." + df.format(kolomkembalian));
+}   
 
     /**
      * @param args the command line arguments
@@ -587,11 +617,11 @@ public class Transaksi extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField QTY;
     private javax.swing.JButton bayar;
+    private javax.swing.JDialog bayarin;
     private javax.swing.JTextField diskon10;
     private javax.swing.JButton edit;
     private javax.swing.JButton hapus;
     private javax.swing.JTextField harga;
-    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
