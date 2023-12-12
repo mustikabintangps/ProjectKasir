@@ -184,7 +184,8 @@ public class Transaksi extends javax.swing.JFrame {
             rp.setText("Rp. " + df.format(sub_total));
             diskon10.setText("Rp." + df.format(diskon));
             totalhargabawah.setText("Rp." + df.format(total));
-        }else{
+        }else
+        {
             jumlahharga.setText(df.format(sub_total));
             rp.setText("Rp. " + df.format(sub_total));
             diskon10.setText("-");
@@ -381,6 +382,11 @@ public class Transaksi extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabeltransaksi);
 
         status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Member", "Non Member" }));
+        status.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statusActionPerformed(evt);
+            }
+        });
 
         printstruk.setText("Print Struk");
         printstruk.addActionListener(new java.awt.event.ActionListener() {
@@ -630,6 +636,10 @@ public class Transaksi extends javax.swing.JFrame {
         }
     }
     }//GEN-LAST:event_kolombayarKeyReleased
+
+    private void statusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_statusActionPerformed
 
     /**
      * @param args the command line arguments
