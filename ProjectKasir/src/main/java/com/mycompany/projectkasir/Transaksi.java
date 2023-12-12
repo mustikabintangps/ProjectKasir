@@ -184,7 +184,7 @@ public class Transaksi extends javax.swing.JFrame {
             rp.setText("Rp. " + df.format(sub_total));
             diskon10.setText("Rp." + df.format(diskon));
             totalhargabawah.setText("Rp." + df.format(total));
-        }else
+        }else 
         {
             jumlahharga.setText(df.format(sub_total));
             rp.setText("Rp. " + df.format(sub_total));
@@ -340,6 +340,11 @@ public class Transaksi extends javax.swing.JFrame {
         totalharga.setEditable(false);
 
         edit.setText("Edit");
+        edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editActionPerformed(evt);
+            }
+        });
 
         hapus.setText("Delete");
         hapus.addActionListener(new java.awt.event.ActionListener() {
@@ -640,6 +645,10 @@ public class Transaksi extends javax.swing.JFrame {
     private void statusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_statusActionPerformed
+
+    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editActionPerformed
 
     /**
      * @param args the command line arguments
